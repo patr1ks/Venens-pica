@@ -8,10 +8,9 @@ import javax.swing.JPanel;
 
 public class Order extends JPanel {
 	Maneger maneger;
-	int x=0, y=0, z=0;
+	int d=0, f=0, g=0;
 	double a=9.5,b=8.3,c=7.5;
 	Order(Maneger maneger){
-		
 		this.maneger = maneger;
 		this.setLayout(null);
 		
@@ -22,8 +21,8 @@ public class Order extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if(e.getSource() == pica1Button) {
-					x++;
-					pica1Button.setText("Peperoni ("+a+"$) "+x);
+					d++;
+					pica1Button.setText("Peperoni ("+a+"$) "+d);
 					pica1Button.revalidate();
 						
 				}
@@ -40,8 +39,8 @@ public class Order extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if(e.getSource() == pica2Button) {
-					y++;
-					pica2Button.setText("Četru sieru ("+b+"$) "+y);
+					f++;
+					pica2Button.setText("Četru sieru ("+b+"$) "+f);
 					pica2Button.revalidate();
 						
 				}
@@ -58,8 +57,8 @@ public class Order extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if(e.getSource() == pica3Button) {
-					z++;
-					pica3Button.setText("Havaju ("+b+"$) "+z);
+					g++;
+					pica3Button.setText("Havaju ("+b+"$) "+g);
 					pica3Button.revalidate();
 						
 				}
@@ -96,3 +95,5 @@ public class Order extends JPanel {
 		this.add(backButton);
 	}
 }
+
+
