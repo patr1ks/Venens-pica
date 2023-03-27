@@ -33,8 +33,8 @@ public class Receipt extends JPanel {
 		
 		String str= "";
 		for(int i=0;i<maneger.PizzaList.size();i++) {
-			System.out.println(maneger.PizzaList.get(i).getCount()+" x ");
-			str+=maneger.PizzaList.get(i).getCount()+" x \n";//+maneger.PizzaList.get(i).getName()+" "+maneger.PizzaList.get(i).getPrice()
+			
+			str+=maneger.PizzaList.get(i).getName()+" "+maneger.PizzaList.get(i).getCount()+" x \n";//+maneger.PizzaList.get(i).getName()+" "+maneger.PizzaList.get(i).getPrice()
 			label.setAlignmentX(Component.CENTER_ALIGNMENT);
 			}
 		label.setText(str);
