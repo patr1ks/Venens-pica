@@ -45,13 +45,14 @@ public class Register extends JPanel {
 		JButton loginButton = new JButton("Reģistrēties");
 		loginButton.setBounds(10, 160, 110, 25);
 		loginButton.addActionListener(new ActionListener(){
-
+				
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Client client = new Client(name.getText(), email.getText(), Nr.getText());
+				maneger.showMainMenu();
+				/*Client client = new Client(name.getText(), email.getText(), Nr.getText());
 				client.getName();
 				client.getEmail();
-				client.getNumber();
+				client.getNumber();*/
 				
 			}
 			

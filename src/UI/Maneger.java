@@ -1,7 +1,10 @@
 package UI;
 
+import java.util.ArrayList;
+
 import javax.swing.JFrame;
-import javax.swing.JPanel;
+
+import Main.PizzaTypes;
 
 public class Maneger extends JFrame {
 	MainMenu mainMenu;
@@ -19,9 +22,11 @@ public class Maneger extends JFrame {
 		receiptOrder = new ReceiptOrder(this);
 		showMainMenu();
 		
+		
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setVisible(true);
 	}
+	ArrayList<PizzaTypes> PizzaList = new ArrayList<PizzaTypes>();
 
 	private void clear(){
 		this.getContentPane().removeAll();

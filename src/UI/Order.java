@@ -5,68 +5,84 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+import Main.PizzaTypes;
 
 public class Order extends JPanel {
 	Maneger maneger;
-	int d=0, f=0, g=0;
+	
 	double a=9.5,b=8.3,c=7.5;
 	Order(Maneger maneger){
+		
 		this.maneger = maneger;
 		this.setLayout(null);
 		
-		JButton pica1Button= new JButton("Peperoni ("+a+"$)");
-		pica1Button.setBounds(20, 50, 150, 25);
-		pica1Button.addActionListener(new ActionListener(){
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				if(e.getSource() == pica1Button) {
-					d++;
-					pica1Button.setText("Peperoni ("+a+"$) "+d);
-					pica1Button.revalidate();
-						
-				}
-				
-			}
-			
-		});
-		this.add(pica1Button);
 		
-		JButton pica2Button = new JButton("Četru sieru ("+b+"$)");
-		pica2Button.setBounds(20, 100, 150, 25);
-		pica2Button.addActionListener(new ActionListener(){
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				if(e.getSource() == pica2Button) {
-					f++;
-					pica2Button.setText("Četru sieru ("+b+"$) "+f);
-					pica2Button.revalidate();
-						
-				}
-				
-			}
-			
-		});
-		this.add(pica2Button);
+		JTextField count = new JTextField(20);
+		count.setBounds(150,50,30,25);
+		this.add(count);
+		count.getText();
 		
-		JButton pica3Button = new JButton("Havaju ("+c+"$)");
-		pica3Button.setBounds(20, 150, 150, 25);
-		pica3Button.addActionListener(new ActionListener(){
+		JButton Peperoni= new JButton("Peperoni "+a+"$");
+		Peperoni.setBounds(20, 50, 125, 25);
+		Peperoni.addActionListener(new ActionListener(){
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if(e.getSource() == pica3Button) {
-					g++;
-					pica3Button.setText("Havaju ("+b+"$) "+g);
-					pica3Button.revalidate();
+				if(e.getSource() == Peperoni) {
+					PizzaTypes pizzaTypes = new PizzaTypes("Peperoni", 9.5, Integer.parseInt(count.getText()));
+					maneger.PizzaList.add(pizzaTypes);
+					System.out.println(maneger.PizzaList.size());
 						
 				}
 				
 			}
 			
 		});
-		this.add(pica3Button);
+		this.add(Peperoni);
+		
+		JTextField count2 = new JTextField(20);
+		count2.setBounds(150,100,30,25);
+		this.add(count2);
+		count2.getText();
+		
+		JButton Cheese = new JButton("Četru sieru "+b+"$");
+		Cheese.setBounds(20, 100, 125, 25);
+		Cheese.addActionListener(new ActionListener(){
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if(e.getSource() == Cheese) {
+					PizzaTypes pizzaTypes = new PizzaTypes("Četru sieru", 8.3, Integer.parseInt(count2.getText()));
+					maneger.PizzaList.add(pizzaTypes);
+				}
+				
+			}
+			
+		});
+		this.add(Cheese);
+		
+		JTextField count3 = new JTextField(20);
+		count3.setBounds(150,150,30,25);
+		this.add(count3);
+		count3.getText();
+		
+		JButton Havaiian = new JButton("Havaju "+c+"$");
+		Havaiian.setBounds(20, 150, 125, 25);
+		Havaiian.addActionListener(new ActionListener(){
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if(e.getSource() == Havaiian) {
+					PizzaTypes pizzaTypes = new PizzaTypes("Havaju", 7.5, Integer.parseInt(count3.getText()));
+					maneger.PizzaList.add(pizzaTypes);
+				}
+				
+			}
+			
+		});
+		this.add(Havaiian);
 		
 		JButton extraButton = new JButton("Extra piedevas");
 		extraButton.setBounds(195, 50, 120, 25);
@@ -95,5 +111,3 @@ public class Order extends JPanel {
 		this.add(backButton);
 	}
 }
-
-
