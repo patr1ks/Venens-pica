@@ -5,25 +5,33 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+import Main.ToppingTypes;
 
 public class Toppings extends JPanel {
 	Maneger maneger;
-	int a=0,b=0,c=0,d=0,f=0;
+	
 	double Ss=0.7, Sh=0.7, H=0.8, Cc=0.8, Ts=0.5;
 	Toppings(Maneger maneger){
 		this.maneger = maneger;
 		this.setLayout(null);
 		
-		JButton toppButton1= new JButton("Sark. sīpoli ("+Ss+"$)");
-		toppButton1.setBounds(5, 50, 160, 25);
+		JTextField count = new JTextField(20);
+		count.setBounds(135,50,30,25);
+		this.add(count);
+		count.getText();
+		
+		JButton toppButton1= new JButton("Sark. sīpoli "+Ss+"$");
+		toppButton1.setBounds(5, 50, 125, 25);
 		toppButton1.addActionListener(new ActionListener(){
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if(e.getSource() == toppButton1) {
-					a++;
-					toppButton1.setText("Sark. sīpoli ("+Ss+"$) "+a);
-					toppButton1.revalidate();
+					ToppingTypes toppingTypes = new ToppingTypes("Sarkanie sīpoli", 0.7, Integer.parseInt(count.getText()));
+					maneger.ToppingList.add(toppingTypes);
+					System.out.println(maneger.ToppingList.size());
 						
 				}
 				
@@ -32,16 +40,21 @@ public class Toppings extends JPanel {
 		});
 		this.add(toppButton1);
 		
-		JButton toppButton2= new JButton("Šampinjoni ("+Sh+"$)");
-		toppButton2.setBounds(5, 100, 160, 25);
+		JTextField count2 = new JTextField(20);
+		count2.setBounds(135,100,30,25);
+		this.add(count2);
+		count2.getText();
+		
+		JButton toppButton2= new JButton("Šampinjoni "+Sh+"$");
+		toppButton2.setBounds(5, 100, 125, 25);
 		toppButton2.addActionListener(new ActionListener(){
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if(e.getSource() == toppButton2) {
-					b++;
-					toppButton2.setText("Šampinjoni ("+Sh+"$) "+b);
-					toppButton2.revalidate();
+					ToppingTypes toppingTypes = new ToppingTypes("Šampinjoni", 0.7, Integer.parseInt(count2.getText()));
+					maneger.ToppingList.add(toppingTypes);
+					System.out.println(maneger.ToppingList.size());
 						
 				}
 				
@@ -50,16 +63,22 @@ public class Toppings extends JPanel {
 		});
 		this.add(toppButton2);
 		
-		JButton toppButton3= new JButton("Halapenjo ("+H+"$)");
-		toppButton3.setBounds(5, 150, 160, 25);
+		JTextField count3 = new JTextField(20);
+		count3.setBounds(135,150,30,25);
+		this.add(count3);
+		count3.getText();
+		
+		
+		JButton toppButton3= new JButton("Halapenjo "+H+"$");
+		toppButton3.setBounds(5, 150, 125, 25);
 		toppButton3.addActionListener(new ActionListener(){
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if(e.getSource() == toppButton3) {
-					c++;
-					toppButton3.setText("Halapenjo ("+H+"$) "+c);
-					toppButton3.revalidate();
+					ToppingTypes toppingTypes = new ToppingTypes("Halapenjo", 0.8, Integer.parseInt(count3.getText()));
+					maneger.ToppingList.add(toppingTypes);
+					System.out.println(maneger.ToppingList.size());
 						
 				}
 				
@@ -68,16 +87,21 @@ public class Toppings extends JPanel {
 		});
 		this.add(toppButton3);
 		
-		JButton toppButton4= new JButton("Čedara siers ("+Cc+"$)");
-		toppButton4.setBounds(170, 50, 160, 25);
+		JTextField count4 = new JTextField(20);
+		count4.setBounds(300,50,30,25);
+		this.add(count4);
+		count4.getText();
+		
+		JButton toppButton4= new JButton("Čedara s. "+Cc+"$");
+		toppButton4.setBounds(170, 50, 125, 25);
 		toppButton4.addActionListener(new ActionListener(){
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if(e.getSource() == toppButton4) {
-					d++;
-					toppButton4.setText("Čedara siers ("+Cc+"$) "+d);
-					toppButton4.revalidate();
+					ToppingTypes toppingTypes = new ToppingTypes("Čedara siers", 0.8, Integer.parseInt(count4.getText()));
+					maneger.ToppingList.add(toppingTypes);
+					System.out.println(maneger.ToppingList.size());
 						
 				}
 				
@@ -86,16 +110,21 @@ public class Toppings extends JPanel {
 		});
 		this.add(toppButton4);
 		
-		JButton toppButton5= new JButton("Tom. mērce ("+Ts+"$)");
-		toppButton5.setBounds(170, 100, 160, 25);
+		JTextField count5 = new JTextField(20);
+		count5.setBounds(300,100,30,25);
+		this.add(count5);
+		count5.getText();
+		
+		JButton toppButton5= new JButton("Tom. mērc "+Ts+"$");
+		toppButton5.setBounds(170, 100, 125, 25);
 		toppButton5.addActionListener(new ActionListener(){
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if(e.getSource() == toppButton5) {
-					f++;
-					toppButton5.setText("Tom. mērce ("+Ts+"$) "+f);
-					toppButton5.revalidate();
+					ToppingTypes toppingTypes = new ToppingTypes("Tomātu mērce", 0.5, Integer.parseInt(count5.getText()));
+					maneger.ToppingList.add(toppingTypes);
+					System.out.println(maneger.ToppingList.size());
 						
 				}
 				

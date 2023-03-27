@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 
 import Main.PizzaTypes;
+import Main.ToppingTypes;
 
 public class Maneger extends JFrame {
 	MainMenu mainMenu;
@@ -18,7 +19,6 @@ public class Maneger extends JFrame {
 		register = new Register(this);
 		order = new Order(this);
 		toppings = new Toppings(this);
-		receipt = new Receipt(this);
 		receiptOrder = new ReceiptOrder(this);
 		showMainMenu();
 		
@@ -27,6 +27,7 @@ public class Maneger extends JFrame {
 		this.setVisible(true);
 	}
 	ArrayList<PizzaTypes> PizzaList = new ArrayList<PizzaTypes>();
+	ArrayList<ToppingTypes> ToppingList = new ArrayList<ToppingTypes>();
 
 	private void clear(){
 		this.getContentPane().removeAll();
@@ -71,7 +72,7 @@ public class Maneger extends JFrame {
 		clear();
 		this.setTitle("Čeks");
 		this.setSize(350, 350);
-		this.add(receipt);
+		this.add(new Receipt(this));
 		this.revalidate();
 		this.repaint();
 		

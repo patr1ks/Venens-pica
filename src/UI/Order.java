@@ -12,7 +12,7 @@ import Main.PizzaTypes;
 public class Order extends JPanel {
 	Maneger maneger;
 	
-	double a=9.5,b=8.3,c=7.5;
+	double Pp=9.5,Cs=8.3,H=7.5;
 	Order(Maneger maneger){
 		
 		this.maneger = maneger;
@@ -24,7 +24,7 @@ public class Order extends JPanel {
 		this.add(count);
 		count.getText();
 		
-		JButton Peperoni= new JButton("Peperoni "+a+"$");
+		JButton Peperoni= new JButton("Peperoni "+Pp+"$");
 		Peperoni.setBounds(20, 50, 125, 25);
 		Peperoni.addActionListener(new ActionListener(){
 			
@@ -47,7 +47,7 @@ public class Order extends JPanel {
 		this.add(count2);
 		count2.getText();
 		
-		JButton Cheese = new JButton("Četru sieru "+b+"$");
+		JButton Cheese = new JButton("Četru sieru "+Cs+"$");
 		Cheese.setBounds(20, 100, 125, 25);
 		Cheese.addActionListener(new ActionListener(){
 			
@@ -68,7 +68,7 @@ public class Order extends JPanel {
 		this.add(count3);
 		count3.getText();
 		
-		JButton Havaiian = new JButton("Havaju "+c+"$");
+		JButton Havaiian = new JButton("Havaju "+H+"$");
 		Havaiian.setBounds(20, 150, 125, 25);
 		Havaiian.addActionListener(new ActionListener(){
 			
