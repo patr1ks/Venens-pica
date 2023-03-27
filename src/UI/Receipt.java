@@ -31,12 +31,13 @@ public class Receipt extends JPanel {
 		backButton.setBounds(210, 270, 80, 25);
 		backButton.setAlignmentX(Component.CENTER_ALIGNMENT );
 		
+		String str= "";
 		for(int i=0;i<maneger.PizzaList.size();i++) {
-			label = new JLabel(maneger.PizzaList.get(i).getCount()+" x ");	//+maneger.PizzaList.get(i).getName()+" "+maneger.PizzaList.get(i).getPrice()
+			System.out.println(maneger.PizzaList.get(i).getCount()+" x ");
+			str+=maneger.PizzaList.get(i).getCount()+" x \n";//+maneger.PizzaList.get(i).getName()+" "+maneger.PizzaList.get(i).getPrice()
 			label.setAlignmentX(Component.CENTER_ALIGNMENT);
-			
 			}
-		label= new JLabel();
+		label.setText(str);
 		panel.add(label);
 		
 		backButton.addActionListener(new ActionListener(){
