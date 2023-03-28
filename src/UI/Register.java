@@ -71,5 +71,18 @@ public class Register extends JPanel {
 			
 		});
 		this.add(backButton);
+		
+		JButton listButt = new JButton("Klienti");
+		listButt.setBounds(220, 160, 80, 25);
+		listButt.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				maneger.showMainMenu();
+				
+			}
+			
+		});
+		this.add(listButt);
     }
 }
